@@ -1,0 +1,205 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 115%;
+    min-height: 115%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%) scale(0.5);
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.55) 0%,
+        rgba(255, 255, 255, 0.35) 45%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    z-index: 1;
+}
+
+.hero-fade-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 160px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 55%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+.hero-container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.hero-content {
+    max-width: 650px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 0; 
+    transform: translateY(-30px); 
+}
+
+
+.hero-logo-img {
+    margin-bottom: 14px;
+    width: 100%;
+    max-width: 450px; 
+    margin-left: -43px; 
+}
+
+.hero-logo-img img {
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+
+/* 2. Subtitle height slightly reduced (31px font / 42px line-height) */
+.hero-subtitle {
+    margin-top: -3px;
+    margin-left: 0;
+    text-align: left;
+    color: #2D396F;
+    font: normal normal bold 31px/42px "Titillium Web", sans-serif !important;
+}
+
+/* 3. Description height slightly reduced (19px font / 30px line-height) */
+.hero-description {
+    margin-top: 12px;
+    margin-left: 0;
+    text-align: left;
+    color: #222222;
+    max-width: 600px; 
+    font: normal normal 500 19px/30px "Poppins", sans-serif !important;
+}
+
+.hero-highlight {
+    color: #6111A2;
+    font-weight: 700;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px; 
+    margin-top: 24px; 
+    margin-left: 0;
+    width: 100%;
+}
+
+.hero-btn {
+    height: 54px; 
+    padding: 0 30px; 
+    width: auto; 
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font: normal normal bold 18px/27px "Titillium Web", sans-serif !important;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero-btn span {
+    font-size: 20px; 
+    transition: 0.3s;
+}
+
+.hero-btn:hover span {
+    transform: translateX(4px);
+}
+
+.hero-btn-primary {
+    color: white;
+    background: linear-gradient(90deg, #6b14b8 0%, #9034e8 100%);
+    box-shadow: 0 4px 10px rgba(107, 20, 184, 0.25);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-2px);
+    background: #2D396F;
+}
+
+.hero-btn-secondary {
+    background: #4A94FF; 
+    color: white;
+    box-shadow: 0 4px 10px rgba(74, 148, 255, 0.25);
+}
+
+.hero-btn-secondary:hover {
+    background: #9944DE;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+    .hero {
+        min-height: auto;
+        background-attachment: scroll; 
+    }
+    .hero-content {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 80px 0 60px;
+        transform: translateY(0); 
+    }
+    .hero-logo-img {
+        margin: 0 auto 16px;
+        max-width: 380px;
+    }
+    .hero-subtitle {
+        text-align: center;
+    }
+    .hero-description {
+        max-width: 600px;
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 0;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .hero-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}

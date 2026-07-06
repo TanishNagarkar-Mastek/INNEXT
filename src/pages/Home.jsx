@@ -1,13 +1,13 @@
-import Header from "../components/Header/Header";
-import Hero from "../components/Hero/Hero";
-import AskBar from "../components/AskBar/AskBar";
-import HelpSection from "../components/HelpSection/HelpSection";
-import ExploreSection from "../components/ExploreSection/ExploreSection";
-import Stats from "../components/Stats/Stats";
-import SuccessStories from "../components/SuccessStories/SuccessStories";
-import PartnerCTA from "../components/PartnerCTA/PartnerCTA";
-import PartnerEcosystem from "../components/PartnerEcosystem/PartnerEcosystem";
-import Footer from "../components/Footer";
+import Header from "../layout/Header/Header";
+import Hero from "../sections/Home/Hero/Hero";
+import AskBar from "../sections/Home/AskBar/AskBar";
+import HelpSection from "../sections/Home/HelpSection/HelpSection";
+import ExploreSection from "../sections/Home/ExploreSection/ExploreSection";
+import Stats from "../sections/Home/Stats/Stats";
+import SuccessStories from "../sections/Home/SuccessStories/SuccessStories";
+import PartnerCTA from "../sections/Home/PartnerCTA/PartnerCTA";
+import PartnerEcosystem from "../sections/Home/PartnerEcosystem/PartnerEcosystem";
+import Footer from "../layout/Footer/Footer";
 
 function Home() {
   return (

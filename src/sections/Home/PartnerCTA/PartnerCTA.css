@@ -1,0 +1,128 @@
+.cta-section {
+    padding: 50px 0;
+    background: #fff;
+    width: 100%;
+}
+
+.cta-section .container {
+    max-width: 1320px;
+    width: 92%;
+    margin: 0 auto;
+}
+
+.cta-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 32px 48px;
+    border-radius: 8px;
+    background-color: #6418B3;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cta-content h2 {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font: normal normal bold 32px/48px "Titillium Web", sans-serif !important;
+}
+
+.cta-content p {
+    color: #ffffff;
+    margin: 0;
+    font: normal normal normal 22px/34px "Titillium Web", sans-serif !important;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 52px; 
+    padding: 0 28px; 
+    background: #ffffff;
+    border-radius: 6px;
+    color: #9944DE;
+    font: normal normal bold 18px/28px "Titillium Web", sans-serif !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-btn span {
+    transition: transform 0.3s ease;
+}
+
+.cta-btn svg {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cta-btn:hover span {
+    transform: translateX(-3px);
+}
+
+.cta-btn:hover svg {
+    transform: translateX(4px);
+}
+
+@media(max-width: 1100px) {
+    .cta-card {
+        padding: 30px 40px;
+    }
+    .cta-content h2 {
+        font: normal normal bold 28px/40px "Titillium Web", sans-serif !important;
+    }
+    .cta-content p {
+        font: normal normal normal 18px/28px "Titillium Web", sans-serif !important;
+    }
+    .cta-btn {
+        height: 48px;
+        padding: 0 24px;
+        font: normal normal bold 16px/24px "Titillium Web", sans-serif !important;
+    }
+}
+
+@media(max-width: 992px) {
+    .cta-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 30px;
+        gap: 24px;
+    }
+}
+
+@media(max-width: 768px) {
+    .cta-section {
+        padding: 40px 0;
+    }
+    .cta-content h2 {
+        font: normal normal bold 26px/36px "Titillium Web", sans-serif !important;
+    }
+    .cta-content p {
+        font: normal normal normal 16px/24px "Titillium Web", sans-serif !important;
+    }
+}
+
+@media(max-width: 576px) {
+    .cta-card {
+        padding: 30px 20px;
+    }
+    .cta-content h2 {
+        font: normal normal bold 22px/30px "Titillium Web", sans-serif !important;
+    }
+    .cta-content p {
+        font: normal normal normal 15px/22px "Titillium Web", sans-serif !important;
+    }
+    .cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

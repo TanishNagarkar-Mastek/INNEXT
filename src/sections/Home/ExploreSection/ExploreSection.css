@@ -1,0 +1,196 @@
+.section#explore {
+    padding: 100px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.container.explore {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.explore-left {
+    flex: 1;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.explore-left h2 {
+    margin: 0 0 12px 0;
+    color: #1E293B;
+    font: normal normal 600 48px/64px "Titillium Web", sans-serif !important;
+    text-transform: uppercase;
+}
+
+.explore-rule {
+    width: 60px;
+    height: 4px;
+    background: #6111A2;
+    margin-bottom: 20px;
+}
+
+.explore-left p {
+    margin: 0 0 32px 0;
+    color: #475569;
+    text-align: left;
+    font: normal normal 500 20px/32px "Poppins", sans-serif !important;
+}
+
+.view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #6111A2;
+    text-decoration: none;
+    font: normal normal bold 14px/21px "Poppins", sans-serif !important;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.view-all:hover {
+    color: #3b0a63;
+}
+
+.view-all-arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.view-all:hover .view-all-arrow {
+    transform: translateX(4px);
+}
+
+.explore-list-wrap {
+    flex: 1;
+    max-width: 600px;
+    height: 410px; 
+    overflow: hidden; 
+    position: relative;
+}
+
+.explore-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.explore-row {
+    display: flex;
+    align-items: center;
+    height: 82px; 
+    padding: 0 24px;
+    gap: 20px;
+    border-radius: 12px;
+    background: transparent;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.explore-row.active, 
+.explore-row:hover {
+    background: #F8FAFC;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.explore-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #F1F5F9;
+    color: #6111A2;
+    border-radius: 8px;
+    font-size: 22px;
+    flex-shrink: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.explore-row.active .explore-icon, 
+.explore-row:hover .explore-icon {
+    background: #6111A2;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(97, 17, 162, 0.2);
+}
+
+.explore-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.explore-content h4 {
+    margin: 0 0 4px 0;
+    color: #0F172A;
+    font: normal normal 600 16px/21px "Poppins", sans-serif !important;
+}
+
+.explore-content p {
+    margin: 0;
+    color: #64748B;
+    font: normal normal 500 14px/21px "Poppins", sans-serif !important;
+}
+
+.explore-arrow {
+    color: #CBD5E1;
+    font-size: 20px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.explore-row.active .explore-arrow, 
+.explore-row:hover .explore-arrow {
+    color: #6111A2;
+    transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+    .container.explore {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .explore-left {
+        max-width: 100%;
+        align-items: center;
+    }
+    .explore-left p {
+        text-align: center;
+    }
+    .explore-list-wrap {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section#explore {
+        padding: 60px 0;
+    }
+    .explore-left h2 {
+        font-size: 38px !important;
+        line-height: 48px !important;
+    }
+    .explore-left p {
+        font-size: 18px !important;
+        line-height: 28px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .explore-left h2 {
+        font-size: 32px !important;
+        line-height: 42px !important;
+    }
+    .explore-row {
+        padding: 0 16px;
+        gap: 12px;
+    }
+}

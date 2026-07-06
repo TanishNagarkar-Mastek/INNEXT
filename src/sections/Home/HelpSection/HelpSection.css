@@ -1,0 +1,231 @@
+.help-section {
+    width: 100%;
+    padding: 70px 0 90px;
+    background: #fff;
+}
+
+.help-heading {
+    font: normal normal bold 32px/100px Titillium Web;
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.help-container {
+    max-width: 1320px;
+    width: 92%;
+    margin: 0 auto;
+}
+
+.help-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.help-card {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 14px;
+    position: relative;
+    transition: transform .45s ease, box-shadow .45s ease;
+}
+
+.help-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform .6s ease;
+    z-index: 0;
+}
+
+.help-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,22,52,.20) 0%, rgba(15,22,52,.45) 45%, rgba(8,14,40,.85) 100%);
+    transition: background .45s ease;
+    z-index: 1;
+}
+
+.help-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Changed to center so everything floats perfectly in the middle */
+    text-align: center;
+    padding: 30px 15px;
+    z-index: 2;
+}
+
+.help-card-icon {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 6px 14px rgba(255,255,255,.15));
+    transition: transform .35s;
+}
+
+
+.help-content h3 {
+    font: normal normal bold 18px/28px "Titillium Web", sans-serif !important;
+    margin: 0 0 4px 0;
+    min-height: 56px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .35s ease;
+}
+
+
+.help-content p {
+    font: normal normal normal 14px/21px "Titillium Web", sans-serif !important;
+    color: rgba(255,255,255,.85);
+    margin: 0;
+    
+    min-height: 42px; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    transition: color .35s ease;
+}
+
+.help-explore {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    gap: 8px; 
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0;
+    /* absolute positioning keeps it from pushing the text up on hover */
+    position: absolute;
+    bottom: 30px; 
+    transform: translateY(20px);
+    transition: opacity .4s ease, transform .4s ease;
+}
+
+.help-explore svg {
+    font-size: 16px;
+    margin-top: 1px; 
+}
+
+.help-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 50px rgba(57,83,255,.18), 0 8px 18px rgba(0,0,0,.08);
+}
+
+.help-card:hover .help-bg {
+    transform: scale(1.08);
+}
+
+.help-card:hover .help-overlay {
+    background: linear-gradient(180deg, rgba(84,55,255,.10) 0%, rgba(71,126,255,.12) 35%, rgba(13,23,58,.35) 70%, rgba(13,23,58,.62) 100%);
+}
+
+.help-card:hover .help-card-icon {
+    transform: translateY(-16px) scale(1.05); /* Pushes icon up slightly to make room for explore btn */
+}
+
+.help-card:hover h3,
+.help-card:hover p {
+    transform: translateY(-12px); /* Pushes text up smoothly to reveal button */
+}
+
+.help-card:hover p {
+    color: #ffffff;
+}
+
+.help-card:hover .help-explore {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.help-card:last-child .help-overlay {
+    background: linear-gradient(180deg, rgba(124,72,255,.28) 0%, rgba(110,80,255,.42) 40%, rgba(79,143,255,.68) 100%);
+}
+
+.help-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(130deg, rgba(255,255,255,.18), transparent 45%);
+    opacity: 0;
+    transition: opacity .45s;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.help-card:hover::before {
+    opacity: 1;
+}
+
+.help-card::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 16px;
+    box-shadow: 0 0 0 rgba(91,131,255,0);
+    transition: box-shadow .4s, background .4s, opacity .4s;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.help-card:hover::after {
+    box-shadow: 0 0 35px rgba(83,124,255,.28);
+    background: transparent linear-gradient(145deg, #9944DE 0%, #448FFF 100%) 0% 0% no-repeat padding-box;
+    border-radius: 12px;
+    opacity: 0.62;
+}
+
+@media (max-width: 1200px) {
+    .help-cards {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .help-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .help-section {
+        padding: 50px 0;
+    }
+    .help-heading {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .help-cards {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .help-card {
+        aspect-ratio: auto;
+        height: 320px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .help-content {
+        padding: 20px;
+    }
+}

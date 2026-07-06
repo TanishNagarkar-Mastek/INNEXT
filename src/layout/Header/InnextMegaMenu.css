@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Titillium+Web:wght@400;600;700&display=swap');
+
+.mega-menu-wrapper {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1100px;
+  max-width: calc(100vw - 32px);
+  background: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.mega-menu-container {
+  display: flex;
+}
+
+.mega-left {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 28px 32px;
+  background-color: #F8FAFC;
+  background-size: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.mega-left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+}
+
+.mega-brand-logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 14px;
+  margin-left:-5% ;
+}
+
+.mega-brand-sub {
+  font: normal normal bold 17px/24px 'Titillium Web';
+  color: #2D396F;
+  margin: 0 0 10px;
+  text-align: left;
+}
+
+.mega-desc {
+  font: normal normal normal 13px/20px 'Titillium Web';
+  color: #4a5568;
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+.mega-desc span {
+  color: #6111A2;
+  font-weight: 700;
+}
+
+.mega-explore-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  background: #6111A2;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font: normal normal bold 12px/18px 'Titillium Web';
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.mega-right {
+  flex: 1;
+  min-width: 0;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mega-top-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mega-top-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  text-decoration: none;
+  min-width: 0;
+  height: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.mega-top-card:hover {
+  background: #F8FAFC;
+}
+
+.mega-top-card:hover .card-arrow {
+  transform: translateX(4px);
+}
+
+.mega-top-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F5F3FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.mega-top-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+.card-title {
+  font: normal normal bold 12px/16px 'Titillium Web';
+  color: #2D396F;
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+.card-desc {
+  font: normal normal 400 10.5px/15px 'Poppins';
+  color: #676767;
+  margin: 0 0 6px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.card-arrow {
+  color: #6111A2;
+  font-size: 14px;
+  margin-top: 8px;
+  transition: transform 0.2s ease;
+}
+
+.mega-divider {
+  height: 1px;
+  width: 100%;
+  background: #E5E7EB;
+}
+
+.mega-mid-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+  position: relative;
+}
+
+.mega-mid-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #E5E7EB;
+  transform: translateX(-50%);
+}
+
+.mega-mid-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  min-width: 0;
+  height: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.mega-mid-card:hover {
+  background: #F8FAFC;
+}
+
+.mega-mid-card:hover .mid-arrow {
+  transform: translateX(4px);
+  color: #6111A2;
+}
+
+.mega-mid-icon-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-mid-icon-wrap.icon-purple {
+  background: linear-gradient(135deg, #9944DE, #6111A2);
+}
+
+.mega-mid-icon-wrap.icon-blue {
+  background: linear-gradient(135deg, #448FFF, #2874E6);
+}
+
+.mega-mid-icon {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.mega-mid-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.feat-title {
+  font: normal normal bold 12.5px/17px 'Titillium Web';
+  color: #2D396F;
+  margin: 0;
+  text-align: left;
+}
+
+.feat-desc {
+  font: normal normal 400 11px/15px 'Poppins';
+  color: #676767;
+  margin: 0;
+  text-align: left;
+}
+
+.mid-arrow {
+  color: #9CA3AF;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.mega-cta-banner {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: linear-gradient(90deg, #6111A2, #9944DE);
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.mega-cta-text {
+  text-align: left;
+}
+
+.mega-cta-text h4 {
+  color: #ffffff;
+  font: normal normal bold 14px/19px 'Titillium Web';
+  margin: 0 0 2px;
+}
+
+.mega-cta-text p {
+  color: rgba(255, 255, 255, 0.85);
+  font: normal normal 400 12px/17px 'Poppins';
+  margin: 0;
+}
+
+.mega-cta-btn {
+  background: white;
+  color: #9944DE;
+  padding: 9px 18px;
+  border-radius: 5px;
+  font: normal normal bold 12.5px/19px 'Titillium Web';
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}

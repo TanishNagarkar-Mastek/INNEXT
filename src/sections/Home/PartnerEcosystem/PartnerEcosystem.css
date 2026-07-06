@@ -1,0 +1,104 @@
+.partners-section {
+    background: #fff;
+    padding: 60px 0;
+    width: 100%;
+}
+
+.container {
+    max-width: 1320px;
+    width: 92%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.partners-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+}
+
+.partners-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Forces all logos to stay on one single line */
+    justify-content: space-between; /* Spreads them out evenly like the reference image */
+    align-items: center;
+    gap: 20px;
+    
+    /* Adds a horizontal scroll on very small screens so they don't squish */
+    overflow-x: auto; 
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+/* Hides scrollbar in Chrome/Safari/Edge while keeping functionality */
+.partners-grid::-webkit-scrollbar {
+    display: none; 
+}
+
+.partner-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto; /* Prevents flexbox from shrinking the cards too much */
+}
+
+.partner-card img {
+    width: 100%;
+    max-width: 150px;
+    max-height: 55px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover img {
+    transform: scale(1.08);
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+    .partners-heading {
+        font-size: 2.2rem;
+    }
+    
+    .partner-card img {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 40px 0;
+    }
+
+    .partners-heading {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .partners-grid {
+        justify-content: flex-start; /* Better alignment when swiping horizontally on mobile */
+        gap: 40px;
+    }
+
+    .partner-card img {
+        max-width: 100px;
+        max-height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-heading {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+    }
+    
+    .partners-grid {
+        gap: 30px;
+    }
+
+    .partner-card img {
+        max-width: 90px;
+        max-height: 40px;
+    }
+}
