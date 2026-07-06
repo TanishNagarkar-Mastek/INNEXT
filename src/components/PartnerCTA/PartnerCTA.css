@@ -1,0 +1,120 @@
+.cta-section {
+    padding: 50px 0;
+    background: #fff;
+    width: 100%;
+}
+
+.cta-section .container {
+    max-width: 1320px;
+    width: 92%;
+    margin: 0 auto;
+}
+
+.cta-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 36px 48px;
+    border-radius: 8px;
+    background-color: #6418B3;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cta-content h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.cta-content p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 240px;
+    height: 48px;
+    padding: 0 28px;
+    background: #ffffff;
+    border-radius: 6px;
+    color: #9944DE;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-btn span {
+    transition: transform 0.3s ease;
+}
+
+.cta-btn svg {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.cta-btn:hover span {
+    transform: translateX(-3px);
+}
+
+.cta-btn:hover svg {
+    transform: translateX(4px);
+}
+
+@media(max-width: 992px) {
+    .cta-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+        gap: 24px;
+    }
+}
+
+@media(max-width: 768px) {
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 26px;
+    }
+}
+
+@media(max-width: 576px) {
+    .cta-card {
+        padding: 28px 20px;
+    }
+    
+    .cta-content h2 {
+        font-size: 22px;
+    }
+    
+    .cta-content p {
+        font-size: 14px;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        min-width: auto;
+        justify-content: center;
+    }
+}
