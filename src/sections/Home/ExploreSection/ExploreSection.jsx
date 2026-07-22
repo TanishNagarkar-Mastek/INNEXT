@@ -85,7 +85,8 @@ function ExploreSection() {
             Industry-focused solutions powered by AI and innovation.
           </p>
         
-          <Link to="/products-born-in-innext"  className="view-all">
+          {/* YAHAN FIX KIYA HAI: -in-innext hata diya */}
+          <Link to="/products-born"  className="view-all">
             EXPLORE ALL SOLUTIONS <FiArrowRight className="view-all-arrow" />
           </Link>
         </div>
