@@ -22,7 +22,7 @@ const helpItems = [
     desc: "Innovative products built for impact",
     image: productsImg,
     icon: productsIcon,
-    link: "products-born-in-innext",
+    link: "/products-born-in-innext",
   },
   {
     title: "Connected Enterprise Services",
