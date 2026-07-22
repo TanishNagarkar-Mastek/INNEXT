@@ -13,7 +13,6 @@ import deepBlueIcon from "../../../assets/icons/help/deepblue.svg";
 import patentsIcon from "../../../assets/icons/help/patents.svg";
 import venturesIcon from "../../../assets/icons/help/ventures.svg";
 
-
 import { FiArrowRight } from "react-icons/fi";
 
 const helpItems = [
@@ -64,8 +63,9 @@ function HelpSection() {
 
         <div className="help-cards">
           {helpItems.map((item, index) => (
-            <a
-              href={item.link}
+            // FIX: <a> ko <Link> se aur href ko to se replace kar diya hai
+            <Link
+              to={item.link}
               className="help-card"
               key={index}
             >
@@ -90,7 +90,7 @@ function HelpSection() {
                   <FiArrowRight />
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
