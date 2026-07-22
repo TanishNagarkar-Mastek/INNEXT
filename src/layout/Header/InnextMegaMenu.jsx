@@ -1,6 +1,6 @@
 import { FiArrowRight } from "react-icons/fi";
 import "./InnextMegaMenu.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Link already imported hai
 
 import prodIcon from "../../assets/icons/header/products-icon.svg"; 
 import connectedIcon from "../../assets/icons/header/connected-icon.svg";
@@ -17,6 +17,7 @@ import leftBg from "../../assets/icons/header/mega-menu-bg.png";
 import innextLogo from "../../assets/images/INNEXT-Title.png";
 
 const topLinks = [
+  // FIX 1: link ke aage '/' laga diya hai
   { icon: prodIcon, title: "Products Born in Innext", desc: "Innovative products built for impact across industries.", link: "/products-born-in-innext" },
   { icon: connectedIcon, title: "Connected Enterprise Services", desc: "Innovative products built for impact across industries.", link: "#" },
   { icon: deepBlueIcon, title: "Project Deep Blue", desc: "Solve real world business problems with AI-powered solutions.", link: "#" },
@@ -43,7 +44,8 @@ export default function InnextMegaMenu() {
               Where We <span>INNOVATE</span> The <span>NEXT</span> Generation Of Transformative Solutions For Enterprises.
             </p>
             
-            <Link to ="/products-born-in-innext" className="mega-explore-btn">
+           
+            <Link to="/products-born-in-innext" className="mega-explore-btn">
               EXPLORE INNEXT <FiArrowRight />
             </Link>
 
@@ -53,14 +55,15 @@ export default function InnextMegaMenu() {
         <div className="mega-right">
           <div className="mega-top-grid">
             {topLinks.map((link, idx) => (
-              <a href={link.link} className="mega-top-card" key={idx}>
+              
+              <Link to={link.link} className="mega-top-card" key={idx}>
                 <div className="mega-top-icon">
                   <img src={link.icon} alt={link.title} />
                 </div>
                 <h4 className="card-title">{link.title}</h4>
                 <p className="card-desc">{link.desc}</p>
                 <FiArrowRight className="card-arrow" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -68,7 +71,8 @@ export default function InnextMegaMenu() {
 
           <div className="mega-mid-grid">
             {midFeatures.map((feat, idx) => (
-              <a href={feat.link} className="mega-mid-card" key={idx}>
+              
+              <Link to={feat.link} className="mega-mid-card" key={idx}>
                 <div className={`mega-mid-icon-wrap ${feat.gradient === "blue" ? "icon-blue" : "icon-purple"}`}>
                   <img src={feat.icon} alt={feat.title} className="mega-mid-icon" />
                 </div>
@@ -77,7 +81,7 @@ export default function InnextMegaMenu() {
                   <p className="feat-desc">{feat.desc}</p>
                 </div>
                 <FiArrowRight className="mid-arrow" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -86,9 +90,10 @@ export default function InnextMegaMenu() {
               <h4>Explore partnership with INNEXT?</h4>
               <p>Let’s co-create the future of your enterprise.</p>
             </div>
-            <a href="/partner" className="mega-cta-btn">
+            
+            <Link to="/partner" className="mega-cta-btn">
               <span>PARTNER WITH INNEXT</span> <FiArrowRight />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
