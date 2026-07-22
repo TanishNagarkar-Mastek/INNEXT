@@ -7,6 +7,7 @@ import {
   FiCheck,
   FiArrowRight
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import "./ExploreSection.css";
 
 const exploreItems = [
@@ -83,9 +84,10 @@ function ExploreSection() {
           <p>
             Industry-focused solutions powered by AI and innovation.
           </p>
-          <a href="#" className="view-all">
+        
+          <Link to="/products-born-in-innext"  className="view-all">
             EXPLORE ALL SOLUTIONS <FiArrowRight className="view-all-arrow" />
-          </a>
+          </Link>
         </div>
 
         <div

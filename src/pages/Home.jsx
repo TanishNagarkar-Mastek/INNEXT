@@ -9,6 +9,7 @@ import PartnerCTA from "../sections/Home/PartnerCTA/PartnerCTA";
 import PartnerEcosystem from "../sections/Home/PartnerEcosystem/PartnerEcosystem";
 import Footer from "../layout/Footer/Footer";
 
+
 function Home() {
   return (
     <>

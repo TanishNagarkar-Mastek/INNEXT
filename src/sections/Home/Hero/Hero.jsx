@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { Link } from "react-router-dom";
 import heroTitleImg from "../../../assets/images/INNEXT-Title.png";
 
 function Hero() {
@@ -33,10 +34,11 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
+            <Link to="/products-born-in-innext">
             <button className="hero-btn hero-btn-primary">
               EXPLORE ECOSYSTEM <span>→</span>
             </button>
-
+            </Link>
             <button className="hero-btn hero-btn-secondary">
               PARTNER WITH INNEXT <span>→</span>
             </button>

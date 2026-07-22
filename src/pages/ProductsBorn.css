@@ -1,0 +1,426 @@
+/* =========================================
+   Products Born in INNEXT Page Styles
+========================================= */
+
+.products-born-page {
+  width: 100%;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   VIDEO BACKGROUND & EXTENDED OVERLAY LAYOUT
+========================================= */
+.hero-gradient-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding-bottom: 60px; 
+}
+.hero-gradient-wrapper::after {
+
+content: "";
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+
+/* MAGIC TWEAK: Overlay ko 0.6 pe set kiya hai ek rich lavender tone ke sath */
+
+background: linear-gradient(to bottom, rgba(232, 215, 255, 0.5) 0%, rgba(255, 255, 255, 0.95) 100%);
+
+
+z-index: 1;
+
+pointer-events: none;
+
+} 
+
+
+/* Video Styling */
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+/* Dedicated Video Overlay extended down through explore text section and fading to white */
+/* Light, airy, and professional enterprise overlay */
+/* The exact rich lavender & white balanced overlay */
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(232, 215, 255, 0.25) 0%,   /* Hero top: faint lavender */
+    rgba(232, 215, 255, 0.45) 35%,  /* Mid hero/Askbar area */
+    rgba(243, 235, 255, 0.8) 75%,   /* Covering explore text section smoothly */
+    rgba(255, 255, 255, 1) 100%     /* Bottom merge into pure white */
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensuring content stays above video & overlay */
+.products-hero-section,
+.explore-text-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Hero Section --- */
+.products-hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; 
+  padding-bottom: 0px; 
+}
+
+.products-hero-content {
+  text-align: center;
+  max-width: 900px;
+  padding: 0 20px;
+  margin-bottom: 50px; 
+}
+
+.products-subtitle {
+  display: block;
+  font: normal normal bold 24px/36px "Titillium Web", sans-serif;
+  color: #2D396F;
+  margin-bottom: -15px; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.products-title {
+  font: normal normal bold 120px/140px "Titillium Web", sans-serif;
+  color: #2D396F;
+  margin: 0;
+  letter-spacing: 0px;
+}
+
+.products-title span {
+  color: #9944DE;
+}
+
+.products-description {
+  font: normal normal 500 18px/27px "Poppins", sans-serif;
+  color: #4A5568;
+  max-width: 750px;
+  margin: 10px auto 0 auto; 
+}
+
+/* --- AskBar Overlap --- */
+/* --- Sleeker & Slimmer AskBar Styling --- */
+.products-askbar-wrapper {
+  width: 100%;
+  max-width: 1150px; /* Baki cards container (`1150px`) ke sath perfectly match karega */
+  padding: 0 20px;
+  margin-top: 0 !important; 
+  transform: translateY(50%) !important; 
+}
+
+.products-askbar-wrapper > div {
+  padding: 14px 24px !important; 
+  box-shadow: 0 12px 35px rgba(45, 57, 111, 0.06) !important; 
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 10px !important;
+}
+
+/* --- Explore Text Section (Inside lavender overlay) --- */
+.explore-text-section {
+  text-align: center;
+  padding: 130px 20px 50px 20px; /* Top padding adjusted for AskBar overlap space */
+  background: transparent; 
+}
+
+.explore-title {
+  font: normal normal bold 22px/34px "Titillium Web", sans-serif;
+  color: #1E293B;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.explore-description {
+  font: normal normal 500 14px/22px "Poppins", sans-serif;
+  color: #334155;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SOLUTION AREAS & FILTERS (Compact Cards)
+========================================= */
+.solution-areas-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px 20px 100px 20px;
+}
+
+.solution-container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* Filters */
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: 1px solid #CBD5E1;
+  background-color: #ffffff;
+  color: #334155;
+  font: normal normal 600 16px/24px "Titillium Web", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-icon {
+  color: #9944DE;
+  font-size: 18px;
+}
+
+.filter-btn.active {
+  background-color: #2D396F;
+  color: #ffffff;
+  border-color: #2D396F;
+}
+
+.filter-status-text {
+  font: normal normal 500 16px/25px "Poppins", sans-serif;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.solution-section-title {
+  font: normal normal normal 32px/80px "Titillium Web", sans-serif;
+  color: #1E293B;
+  margin-bottom: 0px;
+}
+
+/* Layout for Compact Cards */
+.pb-solution-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pb-solution-card {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  border-left: 6px solid #9944DE; 
+  padding: 18px 24px;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pb-solution-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.pb-card-left-content {
+  flex: 1;
+}
+
+.pb-card-right-content {
+  width: 440px; 
+  flex-shrink: 0;
+  min-height: 125px; /* Box gayab hone par bhi height maintain rahegi, koi flicker nahi hoga */
+  display: flex;
+  align-items: center;
+}
+/* Card Header */
+.pb-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pb-card-icon {
+  color: #2D396F;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.pb-card-title {
+  font: normal normal bold 16px/24px "Poppins", sans-serif;
+  color: #1E293B;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pb-card-capsules {
+  display: flex;
+  gap: 6px;
+  margin-left: 6px;
+}
+
+.pb-capsule {
+  font: normal normal 500 12px/18px "Poppins", sans-serif;
+  color: #9944DE;
+  background-color: #F8F4FF;
+  border: 1px solid #D8B4FE;
+  padding: 1px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pb-card-desc {
+  font: normal normal 500 13px/20px "Poppins", sans-serif;
+  color: #64748B;
+  margin: 0 0 14px 0;
+}
+
+/* Pills */
+.pb-solutions-label {
+  font: normal normal 500 12px/18px "Poppins", sans-serif;
+  color: #94A3B8;
+  margin: 0 0 8px 0;
+}
+
+.pb-solutions-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pb-solution-pill {
+  display: flex;
+  align-items: center;
+  padding: 5px 14px 5px 8px;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font: normal normal 600 14px/22px "Poppins", sans-serif;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pb-pill-indicator {
+  width: 5px;
+  height: 15px;
+  background-color: #D8B4FE;
+  border-radius: 3px;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+}
+
+.pb-solution-pill.hovered {
+  background: transparent linear-gradient(100deg, #448FFF 0%, #9944DE 100%) 0% 0% no-repeat padding-box;
+  color: #ffffff;
+  border-color: #8B5CF6;
+}
+
+.pb-solution-pill.hovered .pb-pill-indicator {
+  background-color: #ffffff; 
+}
+
+/* Right Side Hover/Active Impact Box */
+.pb-impact-box {
+  background-color: #F8FAFC; 
+  padding: 16px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #F1F5F9;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.pb-impact-text {
+  flex: 1;
+}
+
+.pb-impact-text h4 {
+  font: normal normal bold 15px/22px "Poppins", sans-serif;
+  color: #0F172A;
+  margin: 0 0 6px 0;
+}
+
+.pb-impact-text p {
+  font: normal normal normal 12px/17px "Poppins", sans-serif;
+  color: #475569;
+  margin: 0 0 10px 0;
+}
+
+.pb-explore-link {
+  font: normal normal bold 11px/16px "Poppins", sans-serif;
+  color: #8B5CF6;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.pb-explore-link:hover {
+  text-decoration: underline;
+}
+
+/* Gauge Chart Compact */
+.pb-impact-gauge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pb-gauge-circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pb-gauge-inner {
+  width: 47px;
+  height: 47px;
+  background-color: #F8FAFC; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: normal normal bold 14px/20px "Poppins", sans-serif;
+  color: #8B5CF6;
+}

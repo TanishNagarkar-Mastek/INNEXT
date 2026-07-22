@@ -1,5 +1,6 @@
 import { FiArrowRight } from "react-icons/fi";
 import "./InnextMegaMenu.css";
+import { Link } from "react-router-dom";
 
 import prodIcon from "../../assets/icons/header/products-icon.svg"; 
 import connectedIcon from "../../assets/icons/header/connected-icon.svg";
@@ -16,7 +17,7 @@ import leftBg from "../../assets/icons/header/mega-menu-bg.png";
 import innextLogo from "../../assets/images/INNEXT-Title.png";
 
 const topLinks = [
-  { icon: prodIcon, title: "Products Born in Innext", desc: "Innovative products built for impact across industries.", link: "#" },
+  { icon: prodIcon, title: "Products Born in Innext", desc: "Innovative products built for impact across industries.", link: "products-born-in-innext" },
   { icon: connectedIcon, title: "Connected Enterprise Services", desc: "Innovative products built for impact across industries.", link: "#" },
   { icon: deepBlueIcon, title: "Project Deep Blue", desc: "Solve real world business problems with AI-powered solutions.", link: "#" },
   { icon: ipIcon, title: "IP & Patents", desc: "Protect, manage and maximise your intellectual property.", link: "#" },
@@ -41,9 +42,11 @@ export default function InnextMegaMenu() {
             <p className="mega-desc">
               Where We <span>INNOVATE</span> The <span>NEXT</span> Generation Of Transformative Solutions For Enterprises.
             </p>
-            <a href="/explore" className="mega-explore-btn">
+            
+            <Link to ="/products-born-in-innext" className="mega-explore-btn">
               EXPLORE INNEXT <FiArrowRight />
-            </a>
+            </Link>
+
           </div>
         </div>
 

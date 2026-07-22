@@ -1,4 +1,5 @@
 import "./HelpSection.css";
+import { Link } from "react-router-dom";
 
 import productsImg from "../../../assets/images/help/products.png";
 import enterpriseImg from "../../../assets/images/help/enterprise.png";
@@ -12,6 +13,7 @@ import deepBlueIcon from "../../../assets/icons/help/deepblue.svg";
 import patentsIcon from "../../../assets/icons/help/patents.svg";
 import venturesIcon from "../../../assets/icons/help/ventures.svg";
 
+
 import { FiArrowRight } from "react-icons/fi";
 
 const helpItems = [
@@ -20,7 +22,7 @@ const helpItems = [
     desc: "Innovative products built for impact",
     image: productsImg,
     icon: productsIcon,
-    link: "#",
+    link: "products-born-in-innext",
   },
   {
     title: "Connected Enterprise Services",
