@@ -16,20 +16,112 @@
     object-fit: cover; 
     z-index: 0;
     pointer-events: none;
-    object-position: center;
+    
+    /* Video ko right mein shift aur scale karne ke liye (jaisa pehle tha) */
+    object-position: right center; 
+    transform: scale(1.15) translateX(25%);
 }
+
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.55) 0%,
-        rgba(255, 255, 255, 0.35) 45%,
-        rgba(255, 255, 255, 0.1) 100%
-    );
     z-index: 1;
+    background: transparent;   /* yeh line critical hai — koi solid fill nahi */
+    pointer-events: none;
 }
 
+/* Layer 1: sirf wave image, apne exact 500px edge pe khud fade ho rahi hai */
+.hero-overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+    background: url('../../../assets/images/wave-bg.jpg') left top / 500px 100% no-repeat;
+    z-index: 1;
+
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        rgba(0,0,0,1) 0px,
+        rgba(0,0,0,1) 340px,
+        rgba(0,0,0,0.5) 440px,
+        rgba(0,0,0,0) 500px
+    );
+    mask-image: linear-gradient(
+        90deg,
+        rgba(0,0,0,1) 0px,
+        rgba(0,0,0,1) 340px,
+        rgba(0,0,0,0.5) 440px,
+        rgba(0,0,0,0) 500px
+    );
+}
+
+/* Layer 2: white base fade — text ke peeche readability ke liye,
+   lekin image jitni hi jagah pe khatam, thoda extra soft */
+.hero-overlay-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 700px;
+    height: 100%;
+    background: #ffffff;
+    z-index: 0;
+
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        rgba(0,0,0,1) 0px,
+        rgba(0,0,0,1) 380px,
+        rgba(0,0,0,0.4) 500px,
+        rgba(0,0,0,0) 650px
+    );
+    mask-image: linear-gradient(
+        90deg,
+        rgba(0,0,0,1) 0px,
+        rgba(0,0,0,1) 380px,
+        rgba(0,0,0,0.4) 500px,
+        rgba(0,0,0,0) 650px
+    );
+}
+
+/* Layer 3: color bridge — image ke fade-point (500px) se shuru hoke
+   video ke purple-blue glow tak color continuity banata hai */
+.hero-blend-bridge {
+    position: absolute;
+    top: 0;
+    left: 420px;
+    width: 550px;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(147, 112, 219, 0.28) 0%,
+        rgba(147, 112, 219, 0.16) 30%,
+        rgba(96, 165, 250, 0.10) 60%,
+        rgba(255,255,255,0) 100%
+    );
+    mix-blend-mode: soft-light;
+}
+/* Optional: seam ke colors ko video se visually tie karne ke liye
+   ek thin color-bridge layer add karo — purple/blue tint jo video ke
+   cube colors se match kare, seam ko "fade to nothing" ki jagah
+   "fade into the scene" jaisa feel dega */
+.hero-blend-bridge {
+    position: absolute;
+    top: 0;
+    left: 500px;
+    width: 500px;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at left center,
+        rgba(147, 112, 219, 0.25) 0%,
+        rgba(96, 165, 250, 0.12) 45%,
+        rgba(255,255,255,0) 80%
+    );
+    mix-blend-mode: soft-light;
+}
 .hero-fade-bottom {
     position: absolute;
     left: 0;
@@ -45,6 +137,7 @@
     z-index: 1;
     pointer-events: none;
 }
+
 .hero-container {
     max-width: 1320px;
     width: 100%;
@@ -56,6 +149,7 @@
     position: relative;
     z-index: 2;
 }
+
 .hero-content {
     max-width: 650px; 
     display: flex;
@@ -65,12 +159,11 @@
     transform: translateY(-30px); 
 }
 
-
 .hero-logo-img {
     margin-bottom: 14px;
     width: 100%;
     max-width: 450px; 
-    margin-left: -43px; 
+    margin-left: 8px; 
 }
 
 .hero-logo-img img {
@@ -79,16 +172,16 @@
     display: block;
 }
 
-/* 2. Subtitle height slightly reduced (31px font / 42px line-height) */
 .hero-subtitle {
     margin-top: -3px;
     margin-left: 0;
     text-align: left;
     color: #2D396F;
     font: normal normal bold 31px/42px "Titillium Web", sans-serif !important;
+    /* FIX 3: Text Pop hone ke liye halka sa shadow */
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
 }
 
-/* 3. Description height slightly reduced (19px font / 30px line-height) */
 .hero-description {
     margin-top: 12px;
     margin-left: 0;
@@ -96,6 +189,8 @@
     color: #222222;
     max-width: 600px; 
     font: normal normal 500 19px/30px "Poppins", sans-serif !important;
+    /* FIX 4: Description bhi clearly padha jayega ab */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
 }
 
 .hero-highlight {
@@ -164,6 +259,10 @@
     .hero {
         min-height: auto;
         background-attachment: scroll; 
+    }
+    .hero-bg-video {
+        /* Mobile/Tablet pe agar sphere center mein chahiye toh wapas reset kar diya */
+        object-position: center; 
     }
     .hero-content {
         max-width: 100%;

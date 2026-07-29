@@ -1,0 +1,254 @@
+.ce-hero-scroll-container {
+    position: relative;
+    width: 100%;
+    height: 350vh;
+}
+
+.ce-hero-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #EBE6F5;
+}
+
+.ce-hero-sticky::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    /* rgba-alpha stops use kiye hai instead of solid color, taaki jahan
+       canvas (right 75%) ke saath overlap ho (~25%-50% region), wahan
+       overlay bohot halka rahe aur video wash-out na ho */
+    background: linear-gradient(
+        to right,
+        #EBE6F5 0%,
+        #EBE6F5 22%,
+        rgba(235, 230, 245, 0.75) 30%,
+        rgba(235, 230, 245, 0.4) 38%,
+        rgba(235, 230, 245, 0.15) 46%,
+        rgba(235, 230, 245, 0) 55%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ce-hero-canvas-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100%;
+    z-index: 1;
+   
+}
+
+.ce-hero-fade-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 55%;   /* pehle 45% tha, aur lamba kiya smoother feel ke liye */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(235, 230, 245, 0.15) 30%,
+        rgba(235, 230, 245, 0.45) 40%,
+        rgba(245, 243, 250, 0.75) 60%,
+        rgba(255, 255, 255, 0.92) 80%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+.ce-content-wrapper {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.ce-capsule {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 24px;
+    border: 1px solid #6111A2;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    background: transparent;
+}
+
+.ce-capsule span {
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #6111A2;
+}
+
+.ce-hero-title {
+    margin: 0 0 15px 0;
+    width: 100%;
+    max-width: 650px;
+    text-align: left;
+}
+
+.ce-title-row1 {
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(32px, 4.5vw, 64px);
+    line-height: 1.1;
+    color: #2D396F;
+    margin-bottom: 5px;
+}
+
+.ce-title-row2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ce-title-empower,
+.ce-title-outcome {
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(26px, 3.5vw, 46px);
+    line-height: 1.2;
+}
+
+.ce-title-empower {
+    color: #2D396F;
+}
+
+.ce-title-outcome {
+    color: #2D396F;
+}
+
+.ce-hero-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(15px, 1.5vw, 20px);
+    line-height: 1.5;
+    color: #000000;
+    max-width: 580px;
+    width: 100%;
+    margin: 10px 0 30px 0;
+    text-align: left;
+}
+
+.ce-button-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.ce-btn-explore {
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
+    background: linear-gradient(90deg, #7b2cbf 0%, #9d4edd 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.ce-btn-explore:hover {
+    background: #2D396F;
+}
+
+.ce-btn-partner {
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
+    background: #4EA3F8;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.ce-btn-partner:hover {
+    background: #3985D3;
+}
+
+@media (max-width: 1100px) {
+    .ce-btn-explore, .ce-btn-partner {
+        font-size: 14px;
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ce-hero-sticky::before {
+        width: 100%;
+        background: linear-gradient(to bottom, #EBE6F5 40%, transparent 100%);
+    }
+
+    .ce-hero-canvas-bg {
+        width: 100%;
+        object-position: center bottom;
+    }
+    
+    .ce-content-wrapper {
+        align-items: center;
+        margin-top: -10vh;
+    }
+
+    .ce-hero-title, 
+    .ce-button-group {
+        max-width: 100%;
+    }
+
+    .ce-hero-title, 
+    .ce-hero-subtitle {
+        text-align: center;
+    }
+    
+    .ce-title-row2,
+    .ce-button-group {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .ce-title-row2 {
+        gap: 6px;
+    }
+    .ce-button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .ce-btn-explore, .ce-btn-partner {
+        width: 100%;
+        padding: 15px 20px;
+    }
+}

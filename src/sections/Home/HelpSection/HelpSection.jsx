@@ -28,7 +28,7 @@ const helpItems = [
     desc: "Intelligent, connected and future-ready enterprises",
     image: enterpriseImg,
     icon: enterpriseIcon,
-    link: "#",
+    link: "/connected-enterprise",
   },
   {
     title: "Project Deep Blue",

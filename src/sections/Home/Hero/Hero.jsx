@@ -1,6 +1,7 @@
 import "./Hero.css";
 import { Link } from "react-router-dom";
-import heroTitleImg from "../../../assets/images/INNEXT-Title.png";
+import heroTitleImg from "../../../assets/images/INNEXT-Title (3).png";
+import maze from "../../../assets/videos/maze.mp4"
 
 function Hero() {
   return (
@@ -13,11 +14,15 @@ function Hero() {
         playsInline
         preload="auto"
       >
-        <source src="https://res.cloudinary.com/dxe761dpa/video/upload/v1783350277/bg_f_xptdb3.mp4" type="video/mp4" />
+        <source src={maze} type="video/mp4" />
       </video>
 
       <div className="hero-overlay"></div>
       <div className="hero-overlay"></div>
+      <div className="hero-overlay-fill"></div>
+    <div className="hero-overlay-image"></div>
+    <div className="hero-text-scrim"></div>
+      <div className="hero-blend-bridge"></div>
       <div className="hero-fade-bottom"></div>
       <div className="container hero-container">
         <div className="hero-content">

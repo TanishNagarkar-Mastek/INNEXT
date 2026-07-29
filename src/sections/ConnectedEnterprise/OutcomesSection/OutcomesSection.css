@@ -1,0 +1,130 @@
+/* src/sections/ConnectedEnterprise/OutcomesSection/OutcomesSection.css */
+
+.outcomes-section {
+    width: 100%;
+    /* FIX 1: Padding kam ki taaki section unnecessarily huge na lage */
+    padding: 50px 0 60px; 
+    background: transparent;
+}
+
+.outcomes-container {
+    max-width: 1250px;
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outcomes-heading {
+    /* FIX 2: Font size aur spacing ko thoda compact kiya */
+    font: normal normal bold 34px/44px 'Titillium Web', sans-serif;
+    text-align: center;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0 0 45px 0;
+}
+
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    /* Grid items ko equal height lene ke liye stretch kiya */
+    align-items: stretch; 
+}
+
+.outcome-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+    cursor: pointer;
+    /* FIX 3: 100% height taaki saare cards sabse lambe card jitne bade ho jayein */
+    height: 100%; 
+}
+
+.outcome-icon-wrapper {
+    /* FIX 4: Icon circles ko chota aur sleek kiya (76px -> 64px) */
+    width: 64px; 
+    height: 64px;
+    background: #6111A2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.outcome-icon-wrapper svg {
+    width: 28px; /* SVG icon bhi thoda chota kiya */
+    height: 28px;
+}
+
+.outcome-title {
+    /* Fonts thode tight kiye */
+    font: normal normal 600 17px/24px 'Poppins', sans-serif;
+    letter-spacing: 0px;
+    color: #0D0D0D;
+    margin: 0 0 10px 0;
+    opacity: 1;
+}
+
+.outcome-desc {
+    font: normal normal 500 14px/22px 'Poppins', sans-serif;
+    letter-spacing: 0px;
+    color: #3C3C3C;
+    margin: 0 0 20px 0;
+    opacity: 1;
+    max-width: 260px;
+}
+
+.outcome-arrow {
+    color: #9944DE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    /* FIX 5: Yeh property arrow ko forcefully ekdum bottom pe dhakel degi, 
+       jisse saare arrows horizontally ek straight line mein aa jayenge! */
+    margin-top: auto; 
+}
+
+/* Hover effects */
+.outcome-card:hover .outcome-icon-wrapper {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(97, 17, 162, 0.25);
+}
+
+.outcome-card:hover .outcome-arrow {
+    transform: translateX(6px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+    .outcomes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .outcomes-section {
+        padding: 40px 0;
+    }
+    .outcomes-heading {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 35px;
+    }
+    .outcomes-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .outcome-desc {
+        max-width: 100%;
+    }
+}

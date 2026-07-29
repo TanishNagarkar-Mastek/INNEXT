@@ -1,0 +1,145 @@
+.ii-section {
+    width: 100%;
+    padding: 30px 0 60px;
+    background: transparent !important;
+    text-align: left;
+}
+
+.ii-container {
+    max-width: 1250px;
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4%;
+}
+
+.ii-left-content {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ii-heading {
+    text-align: left;
+    font: normal normal 600 40px/48px 'Titillium Web', sans-serif;
+    letter-spacing: 0px;
+    color: #020202;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+}
+
+.ii-purple-line {
+    width: 100px;
+    height: 7px;
+    background: #6111A2 0% 0% no-repeat padding-box;
+    margin-bottom: 20px;
+}
+
+.ii-list-box {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid rgba(172, 172, 172, 0.5);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ii-list-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(229, 229, 229, 0.7);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.ii-list-item:last-child {
+    border-bottom: none;
+}
+
+.ii-list-item:hover {
+    background-color: #F9F5FE;
+    padding-left: 24px;
+}
+
+.ii-list-item:hover .ii-icon-container {
+    transform: scale(1.2);
+}
+
+.ii-list-item:hover .ii-item-title {
+    color: #6111A2;
+}
+
+.ii-icon-container {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.ii-icon-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ii-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.ii-item-title {
+    font: normal normal 600 15px/20px 'Poppins', sans-serif;
+    color: #0D0D0D;
+    margin: 0 0 2px 0;
+    transition: color 0.3s ease;
+}
+
+.ii-item-desc {
+    font: normal normal 400 13px/18px 'Poppins', sans-serif;
+    color: #0D0D0D;
+    margin: 0;
+}
+
+.ii-right-content {
+    width: 51%;
+    display: flex;
+    margin-top: 5px;
+}
+
+.ii-video-thumb {
+    width: 100%;
+    height: 105%;
+    display: block;
+    border-radius: 8px;
+    margin-top: 11%;
+}
+
+@media (max-width: 992px) {
+    .ii-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .ii-left-content, .ii-right-content {
+        width: 100%;
+    }
+    .ii-heading {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ii-section { padding: 40px 0; }
+    .ii-heading { font-size: 28px; line-height: 36px; }
+    .ii-list-item { padding: 12px 14px; }
+    .ii-icon-container { margin-right: 12px; }
+}

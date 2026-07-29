@@ -1,0 +1,43 @@
+.ce-hero-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    position: relative;
+}
+.ce-askbar-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 51px; 
+    margin-bottom: 50px;
+    
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .ce-hero-section {
+        padding-top: 120px;
+        background-image: 
+            linear-gradient(to bottom, rgba(255,255,255,0) 700px, #ffffff 1050px),
+            url('../assets/images/hero-bg.png');
+        background-size: 100% 1100px, 100% 1100px;
+    }
+    .ce-title-row2 {
+        gap: 6px;
+    }
+    .ce-button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .ce-btn-explore, .ce-btn-partner {
+        width: 100%;
+        padding: 15px 20px;
+    }
+    .ce-askbar-container {
+        margin-top: 140px; 
+    }
+}

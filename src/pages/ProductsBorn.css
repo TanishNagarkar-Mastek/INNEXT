@@ -109,17 +109,22 @@ pointer-events: none;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
-.products-title {
+.products-title{
+  height:50%;
+  width:50%;
+  margin-left: 25%;
+ 
+}
+/* .products-title {
   font: normal normal bold 120px/140px "Titillium Web", sans-serif;
   color: #2D396F;
   margin: 0;
   letter-spacing: 0px;
-}
+} */
 
-.products-title span {
+/* .products-title span {
   color: #9944DE;
-}
+} */
 
 .products-description {
   font: normal normal 500 18px/27px "Poppins", sans-serif;

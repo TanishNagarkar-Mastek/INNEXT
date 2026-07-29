@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../layout/Header/Header.jsx";
+import heroTitleImg from "../assets/images/INNEXT-Title (3).png";
 import AskBar from "../sections/Home/AskBar/AskBar.jsx";
 import PartnerCTA from "../sections/Home/PartnerCTA/PartnerCTA.jsx";
 import Footer from "../layout/Footer/Footer.jsx";
@@ -107,7 +108,10 @@ export default function ProductsBorn() {
         <section className="products-hero-section">
           <div className="products-hero-content">
             <span className="products-subtitle">Products Born in</span>
-            <h1 className="products-title">INN<span>EXT</span></h1>
+            {/* <h1 className="products-title">INN<span>EXT</span></h1> */}
+             <div className="products-title">
+                        <img src={heroTitleImg} alt="INNEXT" />
+                      </div>
             <p className="products-description">
               A portfolio of enterprise-ready platforms, AI solutions and accelerators designed to solve real-world business challenges.
             </p>

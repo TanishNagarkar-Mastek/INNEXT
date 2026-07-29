@@ -19,7 +19,7 @@ import innextLogo from "../../assets/images/INNEXT-Title.png";
 const topLinks = [
   // FIX 1: link ke aage '/' laga diya hai
   { icon: prodIcon, title: "Products Born in Innext", desc: "Innovative products built for impact across industries.", link: "/products-born-in-innext" },
-  { icon: connectedIcon, title: "Connected Enterprise Services", desc: "Innovative products built for impact across industries.", link: "#" },
+  { icon: connectedIcon, title: "Connected Enterprise Services", desc: "Innovative products built for impact across industries.", link: "/connected-enterprise" },
   { icon: deepBlueIcon, title: "Project Deep Blue", desc: "Solve real world business problems with AI-powered solutions.", link: "#" },
   { icon: ipIcon, title: "IP & Patents", desc: "Protect, manage and maximise your intellectual property.", link: "#" },
   { icon: venturesIcon, title: "Ventures", desc: "Invest in ideas that shape tomorrow.", link: "#" },

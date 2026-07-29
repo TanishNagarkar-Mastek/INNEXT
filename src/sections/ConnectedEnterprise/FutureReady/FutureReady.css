@@ -1,0 +1,231 @@
+/* src/sections/ConnectedEnterprise/FutureReady/FutureReady.css */
+
+.fr-section {
+    width: 100%;
+    /* FIX 1: Background transparent kar diya taaki main page ka gradient seamlessly flow kare */
+    background: transparent; 
+    padding: 50px 0 90px; /* Thodi padding adjust ki connection flow ke hisaab se */
+}
+
+.fr-heading {
+    font: normal normal bold 32px/100px Titillium Web;
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.fr-container {
+    max-width: 1320px;
+    width: 92%;
+    margin: 0 auto;
+}
+
+.fr-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.fr-card {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 14px;
+    position: relative;
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.fr-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+    z-index: 0;
+}
+
+/* DEFAULT OVERLAY (Dark and Premium) */
+.fr-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,22,52,.40) 0%, rgba(15,22,52,.65) 45%, rgba(8,14,40,.90) 100%);
+    transition: background 0.45s ease;
+    z-index: 1;
+}
+
+.fr-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 15px;
+    z-index: 2;
+}
+
+.fr-card-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 6px 14px rgba(255,255,255,.15));
+    transition: transform 0.4s ease;
+}
+
+.fr-content h3 {
+    font: normal normal bold 18px/28px "Titillium Web", sans-serif !important;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    min-height: 56px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+}
+
+.fr-content p {
+    font: normal normal normal 14px/21px "Titillium Web", sans-serif !important;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin: 0;
+    min-height: 42px; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+/* FIX 2: EXPLORE Alignment exactly centered */
+.fr-explore {
+    position: absolute;
+    bottom: 25px;
+    left: 54%;
+    transform: translate(-50%, 20px); /* Center horizontal, push down vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; 
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: max-content; /* Prevent stretching */
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fr-explore svg {
+    font-size: 16px;
+    margin-top: 1px; 
+}
+
+/* ============================
+   HOVER EFFECTS (The Magic)
+============================ */
+.fr-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 50px rgba(57,83,255,.18), 0 8px 18px rgba(0,0,0,.08);
+}
+
+.fr-card:hover .fr-bg {
+    transform: scale(1.08);
+}
+
+/* FIX 3: Bright Lavender/Blue Hover Overlay */
+.fr-card:hover .fr-overlay {
+    background: linear-gradient(145deg, rgba(153,68,222,0.85) 0%, rgba(68,143,255,0.85) 100%);
+}
+
+/* Push icon, title, and description slightly UP to make room for EXPLORE */
+.fr-card:hover .fr-card-icon,
+.fr-card:hover h3,
+.fr-card:hover p {
+    transform: translateY(-16px);
+}
+
+/* Slide EXPLORE button into perfect center position */
+.fr-card:hover .fr-explore {
+    opacity: 1;
+    transform: translate(-50%, 0); 
+}
+
+/* Elegant light beam effect on hover */
+.fr-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(130deg, rgba(255,255,255,.18), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.45s;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.fr-card:hover::before {
+    opacity: 1;
+}
+
+/* Outer Glow Border Effect */
+.fr-card::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 16px;
+    box-shadow: 0 0 0 rgba(91,131,255,0);
+    transition: box-shadow 0.4s, background 0.4s, opacity 0.4s;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.fr-card:hover::after {
+    box-shadow: 0 0 35px rgba(83,124,255,.35);
+    background: transparent linear-gradient(145deg, #9944DE 0%, #448FFF 100%) 0% 0% no-repeat padding-box;
+    border-radius: 12px;
+    opacity: 0.8;
+}
+
+/* Responsive Code */
+@media (max-width: 1200px) {
+    .fr-cards {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .fr-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .fr-section {
+        padding: 40px 0;
+    }
+    .fr-heading {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .fr-cards {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .fr-card {
+        aspect-ratio: auto;
+        height: 320px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
