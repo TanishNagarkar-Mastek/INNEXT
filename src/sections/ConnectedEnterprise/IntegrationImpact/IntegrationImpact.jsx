@@ -1,6 +1,6 @@
 import React from 'react';
 import './IntegrationImpact.css';
-import videoThumbImg from '../../../assets/images/Connected-Enterprise/video-Thumbnail.png';
+import videoThumbImg from '../../../assets/images/Connected-Enterprise/video-thumbnail.png';
 
 const listItems = [
   {
