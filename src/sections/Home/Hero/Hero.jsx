@@ -14,7 +14,7 @@ function Hero() {
         playsInline
         preload="auto"
       >
-        <source src={maze} type="video/mp4" />
+        <source src="https://res.cloudinary.com/dxe761dpa/video/upload/v1785352997/maze_fn2vom.mp4" type="video/mp4" />
       </video>
 
       <div className="hero-overlay"></div>
